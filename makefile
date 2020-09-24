@@ -7,4 +7,4 @@ debug:
 test:
 	go build -o bin/versionpush.exe src/main.go
 	echo "Running"
-	"./bin/versionpush"
+	"./bin/versionpush" -builder=maven
