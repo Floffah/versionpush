@@ -8,7 +8,8 @@
         "ms-vsliveshare.vsliveshare",
         "vscode-icons-team.vscode-icons",
         "visualstudioexptteam.vscodeintellicode",
-        "ms-vscode.go"
+        "ms-vscode.go",
+        "golang.go"
     ],
     "dockerFile": "Dockerfile",
     "settings": {
