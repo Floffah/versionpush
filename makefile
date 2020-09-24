@@ -7,7 +7,7 @@ windebug:
 wintest:
 	go build -o bin/versionpush.exe src/main.go
 	echo "Running"
-	"./bin/versionpush" -builder=maven
+	cd test && "../bin/versionpush" -lang=java -pm=maven -ver=1.3.3
 
 build:
 	go build -o bin/versionpush src/main.go
@@ -18,4 +18,4 @@ debug:
 test:
 	go build -o bin/versionpush src/main.go
 	echo "Running"
-	"./bin/versionpush" -builder=maven
+	cd test && "../bin/versionpush" -lang=java -pm=maven -ver=1.3.3

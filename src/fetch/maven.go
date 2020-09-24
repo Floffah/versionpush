@@ -1,6 +1,7 @@
-package fetch
+package files
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -8,18 +9,13 @@ import (
 	"versionpush/src/util"
 )
 
-func findLatestJar(ver string) string {
-	dir, err := os.Getwd()
-	if err != nil || dir == "" {
-		util.Fatal("Error while finding current working directory.")
-		panic(err)
-	}
-	root := filepath.Join(dir, "target")
+func FindLatestJar(ver string, basepath string) *string {
+	root := filepath.Join(basepath, "target")
 	latest := ""
 	var latestTime time.Time
 
 	listerr := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
-		if strings.HasSuffix(path, ".jar") {
+		if strings.HasSuffix(path, ".jar") && strings.Contains(path, ver) {
 			if latest == "" {
 				latest = path
 				latestTime = info.ModTime()
@@ -32,7 +28,11 @@ func findLatestJar(ver string) string {
 	})
 	if listerr != nil {
 		util.Fatal("Error while finding files in a directory")
-		panic(err)
+		panic(listerr)
 	}
-	return latest
+	if latest != "" {
+		util.Info(fmt.Sprintf("Found pre-built \"%v\"", latest))
+		return &latest
+	}
+	return nil
 }
