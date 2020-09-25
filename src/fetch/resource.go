@@ -52,20 +52,20 @@ func ZipEmUp(paths []string, final string) error {
 func AddToZip(writer *zip.Writer, file string) error {
 	zipping, err := os.Open(file)
 	if err != nil {
-		util.Fatal(fmt.Sprintf("An error occurd while trying to open file %v", file))
+		util.Fatal(fmt.Sprintf("An error occured while trying to open file %v", file))
 		panic(err)
 	}
 	defer zipping.Close()
 
 	inf, err := zipping.Stat()
 	if err != nil {
-		util.Fatal(fmt.Sprintf("An error occurd while trying to get statistics of file %v", file))
+		util.Fatal(fmt.Sprintf("An error occured while trying to get statistics of file %v", file))
 		panic(err)
 	}
 
 	hdr, err := zip.FileInfoHeader(inf)
 	if err != nil {
-		util.Fatal(fmt.Sprintf("An error occurd while trying to create header for file %v to .versionpush/resources.zip", file))
+		util.Fatal(fmt.Sprintf("An error occured while trying to create header for file %v to .versionpush/resources.zip", file))
 		panic(err)
 	}
 
@@ -74,7 +74,7 @@ func AddToZip(writer *zip.Writer, file string) error {
 
 	write, err := writer.CreateHeader(hdr)
 	if err != nil {
-		util.Fatal(fmt.Sprintf("An error occurd while trying to create header for the writer of file %v to .versionpush/resources.zip", file))
+		util.Fatal(fmt.Sprintf("An error occured while trying to create header for the writer of file %v to .versionpush/resources.zip", file))
 		panic(err)
 	}
 	_, err = io.Copy(write, zipping)
