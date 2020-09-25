@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"path"
+	"path/filepath"
 	"versionpush/src/fetch"
 	"versionpush/src/util"
 )
@@ -18,7 +18,7 @@ func main() {
 
 	flag.Parse()
 
-	_ = os.Mkdir(path.Join(files.CWD(), ".versionpush"), os.ModeDir)
+	_ = os.Mkdir(filepath.Join(files.CWD(), ".versionpush"), os.ModeDir)
 
 	if lang == "java" {
 		util.Info("Using language profile Java")
@@ -30,8 +30,8 @@ func java(pm string, ver string) {
 	if pm == "maven" {
 		util.Info("Using java project manager Maven")
 		mavens := mavenPrebuilt(ver)
-		final,archive := files.GetFinal(mavens)
-		fmt.Println(final,archive)
+		final, archive := files.GetFinal(mavens)
+		fmt.Println(final, archive)
 	} else {
 		util.Fatal("Unknown builder type \"" + pm + "\"")
 		os.Exit(1)

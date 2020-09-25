@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b72a47c1-1a3f-413f-82a6-c2f9d7b6400b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetch/maven.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetch/maven.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fetch/resource.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetch/resource.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/log.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,5 +58,9 @@
       <screen x="1920" y="26" width="1680" height="1020" />
     </state>
     <state x="2103" y="241" key="SettingsEditor/0.0.1920.1050/1920.26.1680.1020@0.0.1920.1050" timestamp="1600972109213" />
+    <state x="667" y="124" width="585" height="801" key="find.popup" timestamp="1601037903442">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="124" width="585" height="801" key="find.popup/0.0.1920.1050/1920.26.1680.1020@0.0.1920.1050" timestamp="1601037903442" />
   </component>
 </project>
