@@ -9,13 +9,13 @@ wintest:
 	echo "Running"
 	cd test && "../bin/versionpush" -lang=java -pm=maven -ver=1.3.3
 
-build:
+linuxbuild:
 	go build -o bin/versionpush src/main.go
 
-debug:
+linuxdebug:
 	go build -o bin/versionpush -x src/main.go
 
-test:
+linuxtest:
 	go build -o bin/versionpush src/main.go
 	echo "Running"
 	cd test && "../bin/versionpush" -lang=java -pm=maven -ver=1.3.3
