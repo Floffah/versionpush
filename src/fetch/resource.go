@@ -7,6 +7,7 @@ import (
 	"os"
 	"path"
 	"versionpush/src/util"
+	"golang.org/x/sys/unix"
 )
 
 func GetFinal(paths []string) (string, bool) {
@@ -24,6 +25,11 @@ func GetFinal(paths []string) (string, bool) {
 }
 
 func ZipEmUp(paths []string, final string) error {
+	if !Writable(final) {
+		util.Fatal(fmt.Sprintf("File %v is not writable. Aborting...", final))
+		os.Exit(1)
+	}
+
 	zipp, err := os.Create(final)
 	if err != nil {
 		util.Fatal("An error occured while trying to create .versionpush/resources.zip.")
@@ -82,4 +88,8 @@ func CWD() string {
 		os.Exit(1)
 	}
 	return dir
+}
+
+func Writable(path string) bool {
+    return unix.Access(path, unix.W_OK) == nil
 }
